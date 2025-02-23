@@ -3,73 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>新名宏太朗のホームページ</title>
+    <title>新名宏太朗</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            text-align: center;
             background-color: #f0f0f0;
-            padding: 20px;
+            margin: 20px;
+            padding-left: 40px;
+            color: #333;
         }
         .container {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            max-width: 600px;
-            margin: auto;
+            display: flex;
+            align-items: center;
+        }
+        .profile-img {
+            width: 120px;
+            height: auto;
+            border-radius: 5px;
+            margin-right: 15px;
         }
         h1 {
-            color: #333;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0;
+        }
+        p {
+            font-size: 16px;
+            margin: 5px 0;
+        }
+        a {
+            color: #0077cc;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
         }
         h2 {
             color: #444;
             margin-top: 20px;
-            font-size: 18px
+            font-size: 18px;
             border-bottom: 2px solid #0077cc;
             display: inline-block;
             padding-bottom: 5px;
-        }
-        p {
-            font-size: 18px;
-            color: #555;
         }
         ul {
             list-style-type: none;
             padding: 0;
         }
         li {
-             font-size: 12px;
+            font-size: 14px;
             margin: 10px 0;
-        }
-        a {
-            color: #0077cc;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        a:hover {
-            text-decoration: underline;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>新名宏太朗のホームページ</h1>
-        <p>基礎物理学研究所 素粒子論 D1</p>
-        <p><a href="https://inspirehep.net/authors/2533284?ui-citation-summary=true" target="_blank">私の論文：InspireHEP</a></p>
+        <img src="https://raw.githubusercontent.com/あなたのユーザー名/リポジトリ名/main/myphoto.jpg" alt="新名宏太朗の写真" class="profile-img">
         
-        <h2>自己紹介</h2>
-        <p style="font-size: 14px;">
+        <div>
+            <h1>新名宏太朗</h1>
+            <p>基礎物理学研究所 素粒子論 D1</p>
+            <p><a href="https://inspirehep.net/authors/2533284?ui-citation-summary=true" target="_blank">私の論文：InspireHEP</a></p>
+        </div>
+    </div>
+
+    <h2>自己紹介</h2>
+    <p>
         場の量子論や超弦理論に興味がありますが、そこから我々の住む（宇宙定数が正の）宇宙がどのように実現されるかについて、特に興味があります。
         現状はホログラフィ原理を駆使した研究が中心です。
-        どうぞよしなに。</p>
+        どうぞよしなに。
+    </p>
 
-        <h2>自分用：次に読みたい論文/レビュー</h2>
-        <ul>
-            <li><a href="https://arxiv.org/abs/2303.16689" target="_blank">Seeking de-Sitter Vacua in the String Landscape (arXiv:2303.16689)</a></li>
-            <li><a href="https://arxiv.org/abs/2408.17406" target="_blank">The Cosmological CPT Theorem (arXiv:2408.17406)</a></li>
-            <li><a href="https://arxiv.org/abs/2403.16166" target="_blank">de Sitter at all loops: the story of the Schwinger model (arXiv:2403.16166)</a></li>
-        </ul>
-    </div>
+    <h2>自分用：次に読みたい論文/レビュー</h2>
+    <ul>
+        <li><a href="https://arxiv.org/abs/2303.16689" target="_blank">Seeking de-Sitter Vacua in the String Landscape (arXiv:2303.16689)</a></li>
+        <li><a href="https://arxiv.org/abs/2408.17406" target="_blank">The Cosmological CPT Theorem (arXiv:2408.17406)</a></li>
+        <li><a href="https://arxiv.org/abs/2403.16166" target="_blank">de Sitter at all loops: the story of the Schwinger model (arXiv:2403.16166)</a></li>
+    </ul>
 </body>
 </html>
