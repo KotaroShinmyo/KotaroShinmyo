@@ -34,14 +34,14 @@
         display: inline-block;
         padding-bottom: 5px;
     }
-    @media (max-width: 768px) {
-    h2 {
-         transform: scale(1.5); /* h2 のサイズを1.5倍に拡大 */
-    }
-    }
     p, ul {
         text-align: left; /* それ以降の文章は左揃え */
         font-size: 16px;
+    }
+     @media (max-width: 768px) {
+             h2 {
+            font-size: 100px; /* scale() ではなく、直接サイズを変える */
+        }
     }
 
 </style>
