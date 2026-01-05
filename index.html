@@ -1,5 +1,10 @@
+<!DOCTYPE html>
+<html lang="ja">
 <head>
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>新名宏太朗 | Home Page</title>
 </head>
 
 <style>
@@ -87,7 +92,47 @@ details {
 
     }
 
+    /* Language switcher */
+    .lang-switch{
+      position: fixed;
+      top: 14px;
+      right: 14px;
+      display: inline-flex;
+      gap: 6px;
+      padding: 6px;
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 10px;
+      z-index: 9999;
+    }
+    .lang-btn{
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 8px;
+      text-decoration: none;
+      color: #0077cc;
+      font-size: 14px;
+      border: 1px solid rgba(0,119,204,0.25);
+    }
+    .lang-btn:hover{ background: rgba(0,119,204,0.08); }
+    .lang-btn.is-active{
+      background: #0077cc;
+      color: white;
+      border-color: #0077cc;
+    }
+    @media (max-width: 768px){
+      .lang-switch{ top: 8px; right: 8px; padding: 4px; }
+      .lang-btn{ font-size: 11px; padding: 4px 8px; }
+    }
 </style>
+
+<body>
+<!-- Language switcher -->
+<nav class="lang-switch" aria-label="Language switcher">
+  <a class="lang-btn is-active" href="./">JP</a>
+  <a class="lang-btn" href="./en/">EN</a>
+</nav>
 
 <div class="container">
     <img src="https://raw.githubusercontent.com/KotaroShinmyo/KotaroShinmyo/main/IMG_1871 (2).JPG" 
@@ -96,6 +141,9 @@ details {
         <h1>新名宏太朗's Home Page</h1>
         <p>基礎物理学研究所 素粒子論 D1</p>
         <p>略歴・論文リスト：<a href="https://inspirehep.net/authors/2533284?ui-citation-summary=true" target="_blank">InspireHEP</a></p>
+
+        <!-- 英語版への参照リンク（SEOにも効く） -->
+        <p>English page: <a href="./en/">Click here</a></p>
     </div>
 </div>
 
@@ -141,7 +189,7 @@ details {
     <li> 藤木恒成, 小原充貴, 新名宏太朗, 鈴木優樹, 高柳匡, “Dynamics of Pseudo Entropy = Dynamics of de Sitter gravity,” 熱場の量子論, 東京大学物性研究所, 2025年9月 （[4]に基づくポスター発表, 日本語, 査読無し）</li>
     <li> 新名宏太朗, “なぜ素粒子論物理学者はde Sitterを嫌うのか？”, 2025年度夏の学校, 国立オリンピック記念青少年総合センター, 2025年8月（レビュー発表, 口頭発表, 日本語, 査読無し, <span style="color:red;">発表賞を獲得</span>）</li>
     <li> Peng-Xiang Hao, 新名宏太朗, 鈴木優樹, 高橋駿太, 高柳匡, “Bulk Reconstruction of Scalar Excitations in Flat_3/CCFT_2 and the Flat Limit from (A)dS_3/CFT_2,” 場の理論と弦理論, 京都大学基礎物理学研究所, 2025年7月 （[3]に基づくポスター発表, 日本語, 査読あり）</li>
-    <li> Kazuki Doi, Naoki Ogawa, Kotaro Shinmyo, Yu-ki Suzuki, and Tadashi Takayanagi, “Probing de Sitter Space Using CFT States,”  "QIQG 2025" Perimeter Institute for Theoretical Physics, Canada, June 2025 （[2]に基づくポスター発表, 英語, 査読有り）</li>
+    <li> Kazuki Doi, Naoki Ogawa, Kotaro Shinmyo, Yu-ki Suzuki, and Tadashi Takayanagi, “Probing de Sitter Space Using CFT States,”  QIQG 2025, Perimeter Institute for Theoretical Physics, Canada, June 2025 （[2]に基づくポスター発表, 英語, 査読有り）</li>
     <li> Kotaro Shinmyo, “The Cosmological CPT Theorem,” Journal Club in YITP, Yukawa Institute for Theoretical Physics, April 2025（レビュー発表（JC）, 口頭発表, 英語, 査読無し）</li>
   </ul>
 </details>
@@ -171,9 +219,6 @@ details {
   </ul>
 </details>
 
-
-
-
 <h2>自分用：次に読みたい論文・レビュー</h2>
 <ul>
     <li>Seeking de-Sitter Vacua in the String Landscape (<a href="https://arxiv.org/abs/2303.16689" target="_blank">arXiv:2303.16689</a>)</li>
@@ -183,3 +228,5 @@ details {
     <li>de Sitter at all loops: the story of the Schwinger model (<a href="https://arxiv.org/abs/2403.16166" target="_blank">arXiv:2403.16166</a>)</li>
 </ul>
 
+</body>
+</html>
