@@ -3,21 +3,23 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>新名宏太朗 | Home Page</title>
-</head>
 
 <style>
-        .container {
+    /* 追加：幅計算を安定させる */
+    *, *::before, *::after { box-sizing: border-box; }
+
+    .container {
         display: flex;
         align-items: center; /* 画像とテキストを縦方向の中央に配置 */
+        gap: 32px; /* 追加：PCで見やすい間隔に */
     }
     .profile-img {
         width: 30%;
         max-width: 250px;
         height: auto;
         border-radius: 5px;
-        margin-right: 14%; /* 画像とテキストの間に余白 */
+        margin-right: 0; /* 変更：gapを使うので不要 */
     }
     .text-container {
         display: flex;
@@ -27,15 +29,26 @@
     h1, .text-container p {
         margin: 5px 0; /* 上下の余白を調整 */
     }
-    /* それ以降の要素は左揃え */
+
+    /* 変更：bodyは「背景」担当にして、左右余白は.pageに任せる */
     body {
         font-family: Arial, sans-serif;
         background-color: #f0f0f0;
-        margin: 20px;
-        padding-left: 40px;
-        padding-right: 40px;
+        margin: 0;
+        padding: 0;
         color: #333;
     }
+
+    /* 追加：PCで左右に余白を作る本体枠 */
+    .page{
+        max-width: 980px;          /* 好みで900〜1100くらいで調整OK */
+        margin: 28px auto;         /* 中央寄せ */
+        padding: 28px 52px;        /* 左右の余白 */
+        background: #ffffff;       /* 本文は白にして見やすく */
+        border-radius: 14px;       /* 角丸 */
+        box-shadow: 0 10px 28px rgba(0,0,0,0.08); /* うっすら影 */
+    }
+
     h2 {
         color: #444;
         margin-top: 20px;
@@ -48,86 +61,87 @@
         text-align: left; /* それ以降の文章は左揃え */
         font-size: 16px;
     }
+
     /* details/summary（折りたたみ）用 */
-details {
-  margin: 10px 0;
-}
-
-summary {
-  cursor: pointer;
-  font-size: 16px;      /* PC表示の見た目 */
-  line-height: 1.4;
-  padding: 6px 0;
-}
-
-/* 開いたときに中身との間に少し余白 */
-details[open] > summary {
-  margin-bottom: 6px;
-}
-
-    
-    @media (max-width: 768px) { 
-     h1 {
-        font-size: 12px !important; /* スマホではフォントサイズを大きく */
-     }
-     h2 {
-        font-size: 12px !important; /* スマホではフォントサイズを大きく */
-     }
-        p, ul {
-        font-size: 10px !important;
-    }
-    body {
-      padding-left: 20px;
-      padding-right: 10px;
-      padding-top: 52px;
-    }
+    details { margin: 10px 0; }
 
     summary {
-  font-size: 11px !important;  /* スマホでh2(12px)と本文(10px)の中間に合わせる */
-  line-height: 1.4;
-  padding: 4px 0;
-}
+        cursor: pointer;
+        font-size: 16px;      /* PC表示の見た目 */
+        line-height: 1.4;
+        padding: 6px 0;
+    }
 
-details {
-  margin: 6px 0;
-}
+    details[open] > summary { margin-bottom: 6px; }
 
+    @media (max-width: 768px) { 
+        h1 { font-size: 12px !important; }
+        h2 { font-size: 12px !important; }
+        p, ul { font-size: 10px !important; }
+
+        /* 変更：スマホ時は.page側のpaddingで調整 */
+        .page{
+            max-width: 100%;
+            margin: 0;
+            padding: 52px 20px 20px; /* 上は言語スイッチと被らないように確保 */
+            border-radius: 0;
+            box-shadow: none;
+        }
+
+        summary {
+            font-size: 11px !important;
+            line-height: 1.4;
+            padding: 4px 0;
+        }
+
+        details { margin: 6px 0; }
+
+        /* スマホでは縦並びの方が自然 */
+        .container{
+            flex-direction: row;
+            gap: 18px;
+        }
+        .profile-img{
+            width: 35%;
+            max-width: 180px;
+        }
     }
 
     /* Language switcher */
     .lang-switch{
-      position: fixed;
-      top: 14px;
-      right: 14px;
-      display: inline-flex;
-      gap: 6px;
-      padding: 6px;
-      background: rgba(255,255,255,0.85);
-      backdrop-filter: blur(6px);
-      border: 1px solid rgba(0,0,0,0.08);
-      border-radius: 10px;
-      z-index: 9999;
+        position: fixed;
+        top: 14px;
+        right: 14px;
+        display: inline-flex;
+        gap: 6px;
+        padding: 6px;
+        background: rgba(255,255,255,0.85);
+        backdrop-filter: blur(6px);
+        border: 1px solid rgba(0,0,0,0.08);
+        border-radius: 10px;
+        z-index: 9999;
     }
     .lang-btn{
-      display: inline-block;
-      padding: 6px 10px;
-      border-radius: 8px;
-      text-decoration: none;
-      color: #0077cc;
-      font-size: 14px;
-      border: 1px solid rgba(0,119,204,0.25);
+        display: inline-block;
+        padding: 6px 10px;
+        border-radius: 8px;
+        text-decoration: none;
+        color: #0077cc;
+        font-size: 14px;
+        border: 1px solid rgba(0,119,204,0.25);
     }
     .lang-btn:hover{ background: rgba(0,119,204,0.08); }
     .lang-btn.is-active{
-      background: #0077cc;
-      color: white;
-      border-color: #0077cc;
+        background: #0077cc;
+        color: white;
+        border-color: #0077cc;
     }
     @media (max-width: 768px){
-      .lang-switch{ top: 8px; right: 8px; padding: 4px; }
-      .lang-btn{ font-size: 11px; padding: 4px 8px; }
+        .lang-switch{ top: 8px; right: 8px; padding: 4px; }
+        .lang-btn{ font-size: 11px; padding: 4px 8px; }
     }
 </style>
+</head>
 
 <body>
 <!-- Language switcher -->
@@ -136,6 +150,9 @@ details {
   <a class="lang-btn" href="./en/">EN</a>
 </nav>
 
+<!-- 追加：ここから本文を中央寄せ枠に入れる -->
+<main class="page">
+
 <div class="container">
     <img src="https://raw.githubusercontent.com/KotaroShinmyo/KotaroShinmyo/main/IMG_1871 (2).JPG" 
          alt="新名宏太朗の写真" class="profile-img">
@@ -143,8 +160,6 @@ details {
         <h1>新名宏太朗's Home Page</h1>
         <p>基礎物理学研究所 素粒子論 D1</p>
         <p>略歴・論文リスト：<a href="https://inspirehep.net/authors/2533284?ui-citation-summary=true" target="_blank">InspireHEP</a></p>
-
-        <!-- 英語版への参照リンク（SEOにも効く） -->
         <p>English page: <a href="./en/">Click here</a></p>
     </div>
 </div>
@@ -159,8 +174,7 @@ details {
 </p>
 
 <h2>キーワード</h2>
-<p>
-    量子重力理論・ホログラフィ原理・超弦理論・場の量子論・dS/CFT対応</p>
+<p>量子重力理論・ホログラフィ原理・超弦理論・場の量子論・dS/CFT対応</p>
 
 <h2>略歴</h2>
 <ul>
@@ -229,6 +243,9 @@ details {
     <li>Snowmass White Paper: The Cosmological Bootstrap (<a href="https://arxiv.org/pdf/2203.08121" target="_blank">arXiv:2203.08121</a>)</li>
     <li>de Sitter at all loops: the story of the Schwinger model (<a href="https://arxiv.org/abs/2403.16166" target="_blank">arXiv:2403.16166</a>)</li>
 </ul>
+
+</main>
+<!-- 追加：ここまで -->
 
 </body>
 </html>
