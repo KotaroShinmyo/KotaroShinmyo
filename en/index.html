@@ -3,54 +3,59 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kotaro Shinmyo | Research (Quantum Gravity, Holography)</title>
-
-  <!-- SEO -->
-  <meta name="description" content="Kotaro Shinmyo (YITP, Kyoto University). Research interests: quantum gravity, holography, string theory, quantum field theory, and dS/CFT." />
-  <meta name="robots" content="index,follow" />
-
-  <!-- Canonical / hreflang (replace BASE_URL with your real site URL, without trailing slash) -->
-  <link rel="canonical" href="BASE_URL/en/" />
-  <link rel="alternate" hreflang="en" href="BASE_URL/en/" />
-  <link rel="alternate" hreflang="ja" href="BASE_URL/" />
-  <link rel="alternate" hreflang="x-default" href="BASE_URL/" />
-
-  <!-- Open Graph (optional but recommended) -->
-  <meta property="og:title" content="Kotaro Shinmyo" />
-  <meta property="og:description" content="Quantum gravity, holography, string theory, QFT, dS/CFT." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="BASE_URL/en/" />
-</head>
+  <title>Kotaro Shinmyo - Home Page</title>
 
 <style>
+  /* stable width calculation */
+  *, *::before, *::after { box-sizing: border-box; }
+
   .container {
     display: flex;
-    align-items: center; /* vertically center image & text */
+    align-items: flex-start; /* ★changed: top align for better title position */
+    gap: 26px;               /* ★changed: match JP */
   }
   .profile-img {
     width: 30%;
     max-width: 250px;
     height: auto;
     border-radius: 5px;
-    margin-right: 14%;
+    margin-right: 0;         /* ★changed */
   }
   .text-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    flex: 1;                 /* ★added: use remaining right area */
+    align-items: center;     /* ★changed: center within right area */
+    text-align: center;      /* ★added */
   }
   h1, .text-container p {
     margin: 5px 0;
   }
+  .text-container h1{
+    margin-top: 0;           /* ★added */
+    line-height: 1.15;       /* ★added */
+  }
 
+  /* body handles background only */
   body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
-    margin: 20px;
-    padding-left: 40px;
-    padding-right: 40px;
+    margin: 0;
+    padding: 0;
     color: #333;
   }
+
+  /* centered page container for PC (same as JP) */
+  .page{
+    max-width: 980px;
+    margin: 28px auto;
+    padding: 28px 52px;
+    background: #f3f3f3;                 /* ★changed: gray background */
+    border-radius: 14px;
+    box-shadow: 0 10px 28px rgba(0,0,0,0.08);
+    border: 1px solid rgba(0,0,0,0.06);  /* ★added */
+  }
+
   h2 {
     color: #444;
     margin-top: 20px;
@@ -65,45 +70,45 @@
   }
 
   /* details/summary (collapsible) */
-  details {
-    margin: 10px 0;
-  }
+  details { margin: 10px 0; }
   summary {
     cursor: pointer;
     font-size: 16px;
     line-height: 1.4;
     padding: 6px 0;
   }
-  details[open] > summary {
-    margin-bottom: 6px;
-  }
+  details[open] > summary { margin-bottom: 6px; }
 
   @media (max-width: 768px) {
-    h1 {
-      font-size: 12px !important;
+    h1 { font-size: 12px !important; }
+    h2 { font-size: 12px !important; }
+    p, ul { font-size: 10px !important; }
+
+    /* mobile padding handled by .page (same as JP) */
+    .page{
+      max-width: 100%;
+      margin: 0;
+      padding: 52px 20px 20px; /* ★changed: avoid overlap with language switch */
+      border-radius: 0;
+      box-shadow: none;
+      border: none;
     }
-    h2 {
-      font-size: 12px !important;
-    }
-    p, ul {
-      font-size: 10px !important;
-    }
-    body {
-      padding-left: 20px;
-      padding-right: 10px;
-      padding-top: 52px;
-    }
+
     summary {
       font-size: 11px !important;
       line-height: 1.4;
       padding: 4px 0;
     }
-    details {
-      margin: 6px 0;
+    details { margin: 6px 0; }
+
+    .container{ gap: 18px; }
+    .profile-img{
+      width: 35%;
+      max-width: 180px;
     }
   }
 
-  /* Language switcher */
+  /* Language switcher (same as JP) */
   .lang-switch{
     position: fixed;
     top: 14px;
@@ -137,13 +142,17 @@
     .lang-btn{ font-size: 11px; padding: 4px 8px; }
   }
 </style>
+</head>
 
 <body>
-  <!-- Language switcher -->
+  <!-- Language switcher (same structure as JP) -->
   <nav class="lang-switch" aria-label="Language switcher">
     <a class="lang-btn" href="../">JP</a>
     <a class="lang-btn is-active" href="./">EN</a>
   </nav>
+
+  <!-- wrap all contents (same as JP) -->
+  <main class="page">
 
   <div class="container">
     <img
@@ -155,6 +164,8 @@
       <h1>Kotaro Shinmyo's Home Page</h1>
       <p>Yukawa Institute for Theoretical Physics (YITP), Kyoto University — Particle Theory (PhD Year 1)</p>
       <p>CV & Publications: <a href="https://inspirehep.net/authors/2533284?ui-citation-summary=true" target="_blank" rel="noopener noreferrer">InspireHEP</a></p>
+      <!-- added: symmetric to JP page -->
+      <p>Japanese page: <a href="../">Click here</a></p>
     </div>
   </div>
 
@@ -212,7 +223,7 @@
         Kosei Fujiki, Michitaka Kohara, Kotaro Shinmyo, Yu-ki Suzuki, Tadashi Takayanagi,
         “Entropic Interpretation of Einstein Equation in dS/CFT,”
         The 5th “Extreme Universe” Area Meeting, Matsuyama, Dec 2025
-        (Poster based on [4], English, peer-reviewed, <span style="color:red;">received Poster Presentation Award</span>)
+        (Poster based on [4], Japanese, peer-reviewed, <span style="color:red;">received Poster Presentation Award</span>)
       </li>
       <li>
         Kotaro Shinmyo, “Entropic Interpretation of Einstein Equation in dS/CFT,”
@@ -250,7 +261,7 @@
       <li>
         Kazuki Doi, Naoki Ogawa, Kotaro Shinmyo, Yu-ki Suzuki, Tadashi Takayanagi,
         “Probing de Sitter Space Using CFT States,”
-        QIQG 2025, Perimeter Institute for Theoretical Physics, Canada, Jun 2025
+        “QIQG 2025”, Perimeter Institute for Theoretical Physics, Canada, Jun 2025
         (Poster based on [2], English, peer-reviewed)
       </li>
       <li>
@@ -284,7 +295,7 @@
         Kazuki Doi, Junsei Ogawa, Kotaro Shinmyo, Yu-ki Suzuki, Tadashi Takayanagi,
         “Probing de Sitter Space Using CFT States,”
         The 4th “Extreme Universe” Area Meeting, Osaka University, Sep 2024
-        (Poster based on [2], English, peer-reviewed)
+        (Poster based on [2], Japanese, non-peer-reviewed)
       </li>
       <li>
         Kazuki Doi, Junsei Ogawa, Kotaro Shinmyo, Yu-ki Suzuki, Tadashi Takayanagi,
@@ -355,5 +366,7 @@
     <li>Snowmass White Paper: The Cosmological Bootstrap (<a href="https://arxiv.org/pdf/2203.08121" target="_blank" rel="noopener noreferrer">arXiv:2203.08121</a>)</li>
     <li>de Sitter at all loops: the story of the Schwinger model (<a href="https://arxiv.org/abs/2403.16166" target="_blank" rel="noopener noreferrer">arXiv:2403.16166</a>)</li>
   </ul>
+
+  </main>
 </body>
 </html>
